@@ -36,9 +36,8 @@ const itemsList = (item, index) => {
 //    });
 
 const itemsG1 = vehicle[0].equipment[0].items.forEach(itemsList);
-console.log("itemsG1: " + itemsG1);
 
-const generateRoomsTemplate = () => {
+generateRoomsTemplate = () => {
 	html = `
         <tr>
             <th scope="row">${vehicle[0].equipment[0].room}</th>
