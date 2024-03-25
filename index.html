@@ -7,6 +7,7 @@
         <title>Ger&auml;tefinder</title>
         <link href="src/css/style.css" rel="stylesheet">
         <link href="src/css/bootstrap.min.css" rel="stylesheet">
+        <link href="src/css/kennzeichen-klein.css" rel="stylesheet">
         <script src="src/js/bootstrap.bundle.min.js"></script>
     </head>
 
@@ -17,9 +18,9 @@
             <!-- <span></span>
                 <input type="text" id="search" list="suggestions"> -->
 
-            <form>
+            <form onsubmit="return false;">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Suche nach Ger&auml;ten:</label>
+                    <label for="search" class="form-label">Suche nach Ger&auml;ten:</label>
                     <input type="text" class="form-control" id="search" list="suggestions"
                         aria-describedby="searchHelp">
                     <div id="searchHelp" class="form-text">Fang an zu Tippen, dann wirst Du schon etwas finden.</div>
@@ -33,6 +34,12 @@
             <div id="results"></div>
         </div>
         <!-- Tabelle aus script.js wird hier eingefügt -->
+        <div class="container" id="allItems">
+            <div>
+                <h2>Alle Ger&auml;te</h2>
+            </div>
+            <div id="tableContainer"></div>
+        </div>
         <script src="src/js/script.js"></script>
     </body>
 

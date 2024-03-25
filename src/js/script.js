@@ -2,7 +2,7 @@
 const vehicle = [
 	{
 		name: "Rüstwagen",
-		plate: "WL LK 810",
+		plate: "WL-LK 810",
 		equipment: [
 			{
 				room: "G1",
@@ -105,7 +105,7 @@ function createTable() {
 const table = createTable();
 const tableContainer = document.createElement("div");
 tableContainer.innerHTML = table;
-document.body.appendChild(tableContainer);
+document.getElementById("tableContainer").appendChild(tableContainer);
 
 // Funktion zum Öffnen der Lightbox
 function openLightbox(imageSrc) {
@@ -158,36 +158,54 @@ document.getElementById("search").addEventListener("input", (event) => {
 	updateSuggestions(event.target.value);
 });
 
-// Funktion zum Anzeigen der Suchergebnisse
-function showSearchResults(input) {
-	// Erstellen Sie eine neue Tabelle für die Suchergebnisse
-	let table = `
-		<table>
-			<tr>
-				<th scope="col">Fahrzeug</th>
-				<th scope="col">Geräteraum</th>
-				<th scope="col">Gegenstand</th>
-			</tr>`;
-
-	// Durchlaufen Sie jedes Fahrzeug und jeden Artikel
-	vehicle.forEach((v) => {
-		v.equipment.forEach((e) => {
-			e.items.forEach((i) => {
-				// Wenn der Artikel die Eingabe enthält, fügen Sie ihn zur Tabelle hinzu
-				if (i.toLowerCase().includes(input.toLowerCase())) {
-					table += `<tr><td>${v.name}</td><td>${e.room}</td><td>${i}</td></tr>`;
-				}
-			});
-		});
-	});
-
-	table += "</table>";
-
-	// Fügen Sie die Tabelle zum HTML-Dokument hinzu
-	document.getElementById("results").innerHTML = table;
-}
-
 // Fügen Sie einen Event-Listener zum Suchfeld hinzu, um die Suchergebnisse anzuzeigen, wenn die Eingabe geändert wird
 document.getElementById("search").addEventListener("input", (event) => {
 	showSearchResults(event.target.value);
 });
+
+// Funktion zum Anzeigen der Suchergebnisse
+function showSearchResults(input) {
+	if (input.length < 3) {
+		// Wenn die Eingabe weniger als drei Zeichen lang ist, leeren Sie die Suchergebnisse
+		document.getElementById("results").innerHTML = "";
+		document.getElementById("allItems").classList.remove("invisible");
+		return;
+	} else {
+		// Erstellen Sie eine neue Tabelle für die Suchergebnisse
+		let table = `
+			<h2>Suchergebnisse</h2>
+			<table>
+				<tr>
+					<th scope="col">Fahrzeug</th>
+					<th scope="col">Geräteraum</th>
+					<th scope="col">Gegenstand</th>
+				</tr>`;
+
+		// Durchlaufen Sie jedes Fahrzeug und jeden Artikel
+		let hasResults = false; // Variable, um festzustellen, ob es Ergebnisse gibt
+		vehicle.forEach((v) => {
+			v.equipment.forEach((e) => {
+				e.items.forEach((i) => {
+					// Wenn der Artikel die Eingabe enthält, fügen Sie ihn zur Tabelle hinzu
+					if (i.toLowerCase().includes(input.toLowerCase())) {
+						table += `<tr><td>${v.name}</td><td>${e.room}</td><td>${i}</td></tr>`;
+						hasResults = true; // Setzen Sie die Variable auf true, wenn es Ergebnisse gibt
+					}
+				});
+			});
+		});
+
+		table += "</table>";
+
+		// Überprüfen Sie, ob es Ergebnisse gibt
+		if (!hasResults) {
+			table = `<div class="alert alert-danger" role="alert">Keine Ergebnisse gefunden.</div>`; // Wenn es keine Ergebnisse gibt, zeigen Sie einen Text an
+		}
+
+		// Fügen Sie die Tabelle zum HTML-Dokument hinzu
+		document.getElementById("results").innerHTML = table;
+
+		// Blende die Gerätliste aus, wenn es Ergebnisse gibt
+		document.getElementById("allItems").classList.add("invisible");
+	}
+}
