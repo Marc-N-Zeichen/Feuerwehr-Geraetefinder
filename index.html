@@ -11,6 +11,27 @@
     </head>
 
     <body>
+        <!-- Suchfeld und Vorschlagsliste -->
+        <div class="container">
+            <h1>Ger&auml;tefinder</h1>
+            <!-- <span></span>
+                <input type="text" id="search" list="suggestions"> -->
+
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Suche nach Ger&auml;ten:</label>
+                    <input type="text" class="form-control" id="search" list="suggestions"
+                        aria-describedby="searchHelp">
+                    <div id="searchHelp" class="form-text">Fang an zu Tippen, dann wirst Du schon etwas finden.</div>
+                </div>
+            </form>
+
+        </div>
+        <datalist id="suggestions"></datalist>
+        <!-- Suchergebnisse -->
+        <div class="container">
+            <div id="results"></div>
+        </div>
         <!-- Tabelle aus script.js wird hier eingefügt -->
         <script src="src/js/script.js"></script>
     </body>
