@@ -18,13 +18,13 @@
                 <input type="text" id="search" list="suggestions"> -->
 
             <form onsubmit="return false;">
-                <div class="mb-3">
-                    <label for="search" class="form-label">Suche nach Ger&auml;ten:</label>
-                    <input type="text" class="form-control" id="search" list="suggestions"
-                        aria-describedby="searchHelp">
-                    <div id="searchHelp" class="form-text">Fang an zu Tippen, dann wirst Du schon etwas finden.</div>
+                <div class="input-group input-group-lg mb-3">
+                    <input type="text" class="form-control" id="search" placeholder="Suche nach Ger&auml;ten:"
+                        list="suggestions" aria-describedby="clear-input">
+                    <button class="btn btn-outline-secondary" type="button" id="clear-input">x</button>
                 </div>
             </form>
+
 
         </div>
         <datalist id="suggestions"></datalist>
