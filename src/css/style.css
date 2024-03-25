@@ -20,3 +20,28 @@
     border: 5px solid white; /* Fügt einen weißen Rand um das Bild hinzu */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Fügt einen leichten Schatten um das Bild hinzu */
 }
+/* Stil für die Tabelle */
+#results table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Stil für die Tabellenzellen */
+#results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Stil für jede zweite Zeile */
+#results tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Stil beim Überfahren einer Zeile */
+#results tr:hover {
+    background-color: #ddd;
+}
+
+.container {
+    padding-bottom: 1.4em;
+}

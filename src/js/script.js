@@ -30,8 +30,32 @@ const vehicle = [
 					"Erdungsspieß",
 					"Haftmagnet",
 				],
-			}, // Add a comma here
-			{ room: "G2", image: "src/img/rw_g2.JPEG", items: ["D", "E", "F"] },
+			},
+			{
+				room: "G2",
+				image: "src/img/rw_g2.JPEG",
+				items: [
+					"Rettungssäge",
+					"Zubehör für Hebekissen",
+					"Wasserschieber",
+					"Stoßbesen",
+					"Stechschaufeln",
+					"Hebekissen",
+					"Spanngurte",
+					"Verlängerungsgurte",
+					"Formholz",
+					"Heringe",
+					"Erdanker",
+					"Erdankerziehgerät",
+					"Winden",
+					"Drahtseile",
+					"Hebesatz H2",
+					"Mehrzweckzug Z32",
+					"Kantenreiter",
+					"Handhaspel",
+					"Umlenkrolle",
+				],
+			},
 		],
 	},
 	{
@@ -104,3 +128,66 @@ function openLightbox(imageSrc) {
 		document.body.removeChild(lightbox);
 	});
 }
+
+// Funktion zum Aktualisieren der Vorschlagsliste
+function updateSuggestions(input) {
+	// Leeren Sie die aktuelle Vorschlagsliste
+	const dataList = document.getElementById("suggestions");
+	dataList.innerHTML = "";
+
+	// Durchlaufen Sie jedes Fahrzeug und jeden Artikel
+	vehicle.forEach((v) => {
+		v.equipment.forEach((e) => {
+			e.items.forEach((i) => {
+				// Wenn der Artikel die Eingabe enthält und die Eingabe mindestens drei Zeichen lang ist, fügen Sie ihn zur Vorschlagsliste hinzu
+				if (
+					i.toLowerCase().includes(input.toLowerCase()) &&
+					input.length >= 3
+				) {
+					const option = document.createElement("option");
+					option.value = i;
+					dataList.appendChild(option);
+				}
+			});
+		});
+	});
+}
+
+// Fügen Sie einen Event-Listener zum Suchfeld hinzu, um die Vorschlagsliste zu aktualisieren, wenn die Eingabe geändert wird
+document.getElementById("search").addEventListener("input", (event) => {
+	updateSuggestions(event.target.value);
+});
+
+// Funktion zum Anzeigen der Suchergebnisse
+function showSearchResults(input) {
+	// Erstellen Sie eine neue Tabelle für die Suchergebnisse
+	let table = `
+		<table>
+			<tr>
+				<th scope="col">Fahrzeug</th>
+				<th scope="col">Geräteraum</th>
+				<th scope="col">Gegenstand</th>
+			</tr>`;
+
+	// Durchlaufen Sie jedes Fahrzeug und jeden Artikel
+	vehicle.forEach((v) => {
+		v.equipment.forEach((e) => {
+			e.items.forEach((i) => {
+				// Wenn der Artikel die Eingabe enthält, fügen Sie ihn zur Tabelle hinzu
+				if (i.toLowerCase().includes(input.toLowerCase())) {
+					table += `<tr><td>${v.name}</td><td>${e.room}</td><td>${i}</td></tr>`;
+				}
+			});
+		});
+	});
+
+	table += "</table>";
+
+	// Fügen Sie die Tabelle zum HTML-Dokument hinzu
+	document.getElementById("results").innerHTML = table;
+}
+
+// Fügen Sie einen Event-Listener zum Suchfeld hinzu, um die Suchergebnisse anzuzeigen, wenn die Eingabe geändert wird
+document.getElementById("search").addEventListener("input", (event) => {
+	showSearchResults(event.target.value);
+});
