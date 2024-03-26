@@ -172,6 +172,7 @@ function showSearchResults(input) {
 		return;
 	} else {
 		// Erstellen Sie eine neue Tabelle für die Suchergebnisse
+		document.querySelector("#results").style.display = "block";
 		let table = `
 			<h2>Suchergebnisse</h2>
 			<table>
@@ -188,7 +189,7 @@ function showSearchResults(input) {
 				e.items.forEach((i) => {
 					// Wenn der Artikel die Eingabe enthält, fügen Sie ihn zur Tabelle hinzu
 					if (i.toLowerCase().includes(input.toLowerCase())) {
-						table += `<tr><td>${v.name}</td><td>${e.room}</td><td>${i}</td></tr>`;
+						table += `<tr><td>${v.name} (${v.plate})</td><td>${e.room}</td><td>${i}</td></tr>`;
 						hasResults = true; // Setzen Sie die Variable auf true, wenn es Ergebnisse gibt
 					}
 				});
@@ -209,3 +210,10 @@ function showSearchResults(input) {
 		document.getElementById("allItems").classList.add("invisible");
 	}
 }
+// Fügen Sie einen Event-Listener zum Button hinzu
+document.getElementById("clear-input").addEventListener("click", () => {
+	// Setzen Sie die value-Eigenschaft des Eingabefelds auf einen leeren String
+	document.getElementById("search").value = "";
+	document.querySelector("#results").style.display = "none";
+	document.getElementById("allItems").classList.remove("invisible");
+});
