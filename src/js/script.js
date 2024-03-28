@@ -6,7 +6,7 @@ const vehicle = [
 		equipment: [
 			{
 				room: "G1",
-				image: "src/img/rw_g1.JPEG",
+				image: "src/img/rw_g1.jpg",
 				items: [
 					"Wathosen",
 					"Motorsäge mit Zubehör",
@@ -33,7 +33,7 @@ const vehicle = [
 			},
 			{
 				room: "G2",
-				image: "src/img/rw_g2.JPEG",
+				image: "src/img/rw_g2.jpg",
 				items: [
 					"Rettungssäge",
 					"Zubehör für Hebekissen",
