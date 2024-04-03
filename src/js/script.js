@@ -494,10 +494,12 @@ function createTable() {
 }
 
 // Fügen Sie die Tabelle zum HTML-Dokument hinzu
-const table = createTable();
-const tableContainer = document.createElement("div");
-tableContainer.innerHTML = table;
-document.getElementById("tableContainer").appendChild(tableContainer);
+if (document.getElementById("tableContainer")) {
+	const table = createTable();
+	const tableContainer = document.createElement("div");
+	tableContainer.innerHTML = table;
+	document.getElementById("tableContainer").appendChild(tableContainer);
+}
 
 // Funktion zum Öffnen der Lightbox
 function openLightbox(imageSrc) {
@@ -551,16 +553,18 @@ document.getElementById("search").addEventListener("input", (event) => {
 });
 
 // Fügen Sie einen Event-Listener zum Suchfeld hinzu, um die Suchergebnisse anzuzeigen, wenn die Eingabe geändert wird
-document.getElementById("search").addEventListener("input", (event) => {
-	showSearchResults(event.target.value);
-});
+if (document.getElementById("search")) {
+	document.getElementById("search").addEventListener("input", (event) => {
+		showSearchResults(event.target.value);
+	});
+}
 
 // Funktion zum Anzeigen der Suchergebnisse
 function showSearchResults(input) {
 	if (input.length < 3) {
 		// Wenn die Eingabe weniger als drei Zeichen lang ist, leeren Sie die Suchergebnisse
 		document.getElementById("results").innerHTML = "";
-		document.getElementById("allItems").classList.remove("invisible");
+		// document.getElementById("allItems").classList.remove("invisible");
 		return;
 	} else {
 		// Erstellen Sie eine neue Tabelle für die Suchergebnisse
@@ -599,7 +603,7 @@ function showSearchResults(input) {
 		document.getElementById("results").innerHTML = table;
 
 		// Blende die Gerätliste aus, wenn es Ergebnisse gibt
-		document.getElementById("allItems").classList.add("invisible");
+		// document.getElementById("allItems").classList.add("invisible");
 	}
 }
 // Fügen Sie einen Event-Listener zum Button hinzu
@@ -607,5 +611,5 @@ document.getElementById("clear-input").addEventListener("click", () => {
 	// Setzen Sie die value-Eigenschaft des Eingabefelds auf einen leeren String
 	document.getElementById("search").value = "";
 	document.querySelector("#results").style.display = "none";
-	document.getElementById("allItems").classList.remove("invisible");
+	// document.getElementById("allItems").classList.remove("invisible");
 });
