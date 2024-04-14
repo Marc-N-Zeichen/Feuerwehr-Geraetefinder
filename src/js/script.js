@@ -1,7 +1,7 @@
 // Fahrzeuge als Objekte
 const vehicle = [
 	{
-		name: "Rüstwagen",
+		name: "RW",
 		plate: "WL-LK 810",
 		equipment: [
 			{
@@ -176,7 +176,7 @@ const vehicle = [
 		],
 	},
 	{
-		name: "Tanklöschfahrzeug",
+		name: "TLF",
 		plate: "WL-R 5810",
 		equipment: [
 			{
@@ -324,12 +324,12 @@ const vehicle = [
 	},
 
 	{
-		name: "Löschgruppenfahrzeug",
+		name: "LF",
 		plate: "WL-R 5820",
 		equipment: [
 			{
 				room: "G1",
-				image: "",
+				image: "src/img/lf_g1.jpg",
 				items: [
 					"Fahrerhaus1 Trennschleifer mit Zubehoer",
 					"4 Verkehrsleitkegel",
@@ -345,7 +345,7 @@ const vehicle = [
 			},
 			{
 				room: "G2",
-				image: "",
+				image: "src/img/lf_g2.jpg",
 				items: [
 					"4 Ersatz Einsatzkleidung",
 					"1 Erste Hilfe Koffer",
@@ -364,7 +364,7 @@ const vehicle = [
 			},
 			{
 				room: "G3",
-				image: "",
+				image: "src/img/lf_g3.jpg",
 				items: [
 					"13 Druckschläuche B20",
 					"7 Druckschläuche C",
@@ -376,7 +376,7 @@ const vehicle = [
 			},
 			{
 				room: "G4",
-				image: "",
+				image: "src/img/lf_g4.jpg",
 				items: [
 					"1 Druckschlauch S25",
 					"5 Druckschläuche C",
@@ -395,7 +395,7 @@ const vehicle = [
 			},
 			{
 				room: "GR",
-				image: "",
+				image: "src/img/lf_gr.jpg",
 				items: [
 					"800 Liter Wassertank",
 					"1 Saugkorb A",
@@ -573,9 +573,9 @@ function showSearchResults(input) {
 			<h2>Suchergebnisse</h2>
 			<table>
 				<tr>
+					<th scope="col">Gegenstand</th>
 					<th scope="col">Fahrzeug</th>
 					<th scope="col">Geräteraum</th>
-					<th scope="col">Gegenstand</th>
 				</tr>`;
 
 		// Durchlaufen Sie jedes Fahrzeug und jeden Artikel
@@ -585,7 +585,7 @@ function showSearchResults(input) {
 				e.items.forEach((i) => {
 					// Wenn der Artikel die Eingabe enthält, fügen Sie ihn zur Tabelle hinzu
 					if (i.toLowerCase().includes(input.toLowerCase())) {
-						table += `<tr><td>${v.name} (${v.plate})</td><td>${e.room}</td><td>${i}</td></tr>`;
+						table += `<tr><td>${i}</td><td>${v.name} (${v.plate})</td><td>${e.room}</td></tr>`;
 						hasResults = true; // Setzen Sie die Variable auf true, wenn es Ergebnisse gibt
 					}
 				});
