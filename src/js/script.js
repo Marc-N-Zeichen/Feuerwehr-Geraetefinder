@@ -1,181 +1,6 @@
 // Fahrzeuge als Objekte
 const vehicle = [
 	{
-		name: "RW",
-		plate: "WL-LK 810",
-		equipment: [
-			{
-				room: "G1",
-				image: "src/img/rw_g1.jpg",
-				items: [
-					"2 Wathosen",
-					"1 Motorkettensäge inkl. Zubehör",
-					"1 Motortrennschleifer inkl. Zubehör",
-					"3 Leitungstrommeln 230 V davon 1 Ex geschützt",
-					"2 Leitungstrommeln 400 V davon 1 Ex geschützt",
-					"1 E – Verteiler",
-					"Erdungskabel und Erdungsspieß",
-					"Dichtungspropfen und Keile",
-				],
-			},
-			{
-				room: "G2",
-				image: "src/img/rw_g2.jpg",
-				items: [
-					"2 Besen",
-					"2 Schaufeln",
-					"2 Wasserschieber",
-					"2 Hebekissen 40t inkl. Zubehör",
-					"Spanngurte",
-					"Rüsthölzer",
-					"1 Erdanker inkl. Zubehör",
-					"2 Hydraulische Winde 10t",
-					"5 Stahlseile in verschiedener Länge",
-					"Hebesatz 15t",
-					"Mehrzweckzug Z16",
-					"Kantenreiter",
-					"Armatur-Druckplatten",
-					"Umlenkrolle 22t",
-				],
-			},
-			{
-				room: "G3 vorne",
-				image: "src/img/rw_g3.jpg",
-				items: [
-					"Kübelspritze",
-					"Feuerlöscher",
-					"Bergetuch",
-					"Wagenheber",
-					"Stromerzeuger 12 KVA",
-				],
-			},
-			{
-				room: "G3 hinten",
-				image: "src/img/rw_g3.jpg",
-				items: [
-					"Schutzbrillen",
-					"Gehörstöpsel",
-					"Staubmasken",
-					"2 x 1000 Watt Strahler",
-					"1 Stativ",
-					"2 Gefahrgutfässer",
-					"1 Vacuumfass",
-				],
-			},
-			{
-				room: "G4 vorne",
-				image: "src/img/rw_g4.jpg",
-				items: [
-					"1 Glasmaster",
-					"3 Rettungszylinder RZ 1 – 3",
-					"1 Pedalschneider",
-					"1 Schwelleraufsatz",
-					"1 Tripple Hydraulikaggregat Weber",
-					"1 Spreizer SP 60 Weber",
-					"1 Rettungsschere RS 170-105 Weber",
-					"2 Brechstangen",
-				],
-			},
-			{
-				room: "G4 hinten",
-				image: "src/img/rw_g4.jpg",
-				items: [
-					"3 Pressluftflaschen",
-					"4 Stab-Pack",
-					"1 Rangierkupplung",
-					"div. Schäkel und Anschlagketten",
-					"Spreizerzubehör",
-					"1 Bügelsäge",
-					"1 Bolzenschneider",
-					"2 Äxte",
-					"1 Vorschlaghammer",
-					"1 Kuhfuss",
-					"2 Klappspaten",
-				],
-			},
-			{
-				room: "G5",
-				image: "src/img/rw_g5.jpg",
-				items: [
-					"div. Schutzhandschuhe",
-					"Schachthaken",
-					"8 Mehrzweckleinen",
-					"PVC Einhängebehälter",
-					"Fließlappen",
-					"2 Auffangbehälter",
-					"Gefahrgutschläuche Metall",
-				],
-			},
-			{
-				room: "G6",
-				image: "src/img/rw_g6.jpg",
-				items: [
-					"4 Euroblitzer",
-					"Absperrband und Stützen",
-					"Schilderständer und Warnschilder",
-					"1 Set Turbo – Flaire",
-					"6 Verkehrsleitkegel",
-					"3 Handscheinwerfer",
-					"Bedienteil Stromgenerator",
-					"Bedienteil Fahrzeugtechnik HMI",
-				],
-			},
-			{
-				room: "G7",
-				image: "src/img/rw_gr.jpg",
-				items: [
-					"2 C-Druckschläuche säurefest",
-					"1 Ausgußrohr",
-					"1 Handmembranpumpe",
-					"Rohrwinkel",
-					"1 Saugkorb für Gefahrgut",
-					"Übergangsstücke",
-					"Einschaltstrombegrenzer",
-					"Werkzeug nicht funkenreißend",
-					"Dichtungsmaterial",
-					"1 Elro Gefahrgutpumpe",
-					"1 Druckbelüfter",
-					"4 Unterlegkeile",
-					"2x 20L Dieselkanister",
-				],
-			},
-			{
-				room: "GR",
-				image: "src/img/rw_g3.jpg",
-				items: [
-					"4 x Unisafe Öl u. Chemikalienbinder",
-					"1 Rettungsrucksack",
-					"4 Stifneck Halskrausen",
-					"1 Beatmungsgerät",
-					"1 Defibrilator",
-					"1 Verbandkasten für Verbrennungen",
-					"1 Werkzeugkoffer Feuerwehr",
-					"1 Werkzeugkoffer Elektro",
-					"1 Absturzsicherung",
-					"2 Decken",
-					"4 Leichensäcke",
-					"div. Laken und Tücher",
-					"div. Nägel und Schrauben",
-					"4 Sack Ölbindmittel",
-				],
-			},
-			{
-				room: "Dach",
-				image: "src/img/rw_g3.jpg",
-				items: [
-					"1 Krankentrage",
-					"1 Rettungsbrett",
-					"4 teilige Steckleiter",
-					"1 LKW Rettungsplattform",
-					"2 Auffangmulden",
-					"1 Fasspumpe",
-					"Ansaugrohr für Gefahrgut",
-					"Saugdruckschläuche säurefest",
-				],
-			},
-		],
-	},
-	{
 		name: "TLF",
 		plate: "WL-R 5810",
 		equipment: [
@@ -458,19 +283,202 @@ const vehicle = [
 			},
 		],
 	},
+	{
+		name: "RW",
+		plate: "WL-LK 810",
+		equipment: [
+			{
+				room: "G1",
+				image: "src/img/rw_g1.jpg",
+				items: [
+					"2 Wathosen",
+					"1 Motorkettensäge inkl. Zubehör",
+					"1 Motortrennschleifer inkl. Zubehör",
+					"3 Leitungstrommeln 230 V davon 1 Ex geschützt",
+					"2 Leitungstrommeln 400 V davon 1 Ex geschützt",
+					"1 E – Verteiler",
+					"Erdungskabel und Erdungsspieß",
+					"Dichtungspropfen und Keile",
+				],
+			},
+			{
+				room: "G2",
+				image: "src/img/rw_g2.jpg",
+				items: [
+					"2 Besen",
+					"2 Schaufeln",
+					"2 Wasserschieber",
+					"2 Hebekissen 40t inkl. Zubehör",
+					"Spanngurte",
+					"Rüsthölzer",
+					"1 Erdanker inkl. Zubehör",
+					"2 Hydraulische Winde 10t",
+					"5 Stahlseile in verschiedener Länge",
+					"Hebesatz 15t",
+					"Mehrzweckzug Z16",
+					"Kantenreiter",
+					"Armatur-Druckplatten",
+					"Umlenkrolle 22t",
+				],
+			},
+			{
+				room: "G3 vorne",
+				image: "src/img/rw_g3.jpg",
+				items: [
+					"Kübelspritze",
+					"Feuerlöscher",
+					"Bergetuch",
+					"Wagenheber",
+					"Stromerzeuger 12 KVA",
+				],
+			},
+			{
+				room: "G3 hinten",
+				image: "src/img/rw_g3.jpg",
+				items: [
+					"Schutzbrillen",
+					"Gehörstöpsel",
+					"Staubmasken",
+					"2 x 1000 Watt Strahler",
+					"1 Stativ",
+					"2 Gefahrgutfässer",
+					"1 Vacuumfass",
+				],
+			},
+			{
+				room: "G4 vorne",
+				image: "src/img/rw_g4.jpg",
+				items: [
+					"1 Glasmaster",
+					"3 Rettungszylinder RZ 1 – 3",
+					"1 Pedalschneider",
+					"1 Schwelleraufsatz",
+					"1 Tripple Hydraulikaggregat Weber",
+					"1 Spreizer SP 60 Weber",
+					"1 Rettungsschere RS 170-105 Weber",
+					"2 Brechstangen",
+				],
+			},
+			{
+				room: "G4 hinten",
+				image: "src/img/rw_g4.jpg",
+				items: [
+					"3 Pressluftflaschen",
+					"4 Stab-Pack",
+					"1 Rangierkupplung",
+					"div. Schäkel und Anschlagketten",
+					"Spreizerzubehör",
+					"1 Bügelsäge",
+					"1 Bolzenschneider",
+					"2 Äxte",
+					"1 Vorschlaghammer",
+					"1 Kuhfuss",
+					"2 Klappspaten",
+				],
+			},
+			{
+				room: "G5",
+				image: "src/img/rw_g5.jpg",
+				items: [
+					"div. Schutzhandschuhe",
+					"Schachthaken",
+					"8 Mehrzweckleinen",
+					"PVC Einhängebehälter",
+					"Fließlappen",
+					"2 Auffangbehälter",
+					"Gefahrgutschläuche Metall",
+				],
+			},
+			{
+				room: "G6",
+				image: "src/img/rw_g6.jpg",
+				items: [
+					"4 Euroblitzer",
+					"Absperrband und Stützen",
+					"Schilderständer und Warnschilder",
+					"1 Set Turbo – Flaire",
+					"6 Verkehrsleitkegel",
+					"3 Handscheinwerfer",
+					"Bedienteil Stromgenerator",
+					"Bedienteil Fahrzeugtechnik HMI",
+				],
+			},
+			{
+				room: "G7",
+				image: "src/img/rw_gr.jpg",
+				items: [
+					"2 C-Druckschläuche säurefest",
+					"1 Ausgußrohr",
+					"1 Handmembranpumpe",
+					"Rohrwinkel",
+					"1 Saugkorb für Gefahrgut",
+					"Übergangsstücke",
+					"Einschaltstrombegrenzer",
+					"Werkzeug nicht funkenreißend",
+					"Dichtungsmaterial",
+					"1 Elro Gefahrgutpumpe",
+					"1 Druckbelüfter",
+					"4 Unterlegkeile",
+					"2x 20L Dieselkanister",
+				],
+			},
+			{
+				room: "GR",
+				image: "src/img/rw_g3.jpg",
+				items: [
+					"4 x Unisafe Öl u. Chemikalienbinder",
+					"1 Rettungsrucksack",
+					"4 Stifneck Halskrausen",
+					"1 Beatmungsgerät",
+					"1 Defibrilator",
+					"1 Verbandkasten für Verbrennungen",
+					"1 Werkzeugkoffer Feuerwehr",
+					"1 Werkzeugkoffer Elektro",
+					"1 Absturzsicherung",
+					"2 Decken",
+					"4 Leichensäcke",
+					"div. Laken und Tücher",
+					"div. Nägel und Schrauben",
+					"4 Sack Ölbindmittel",
+				],
+			},
+			{
+				room: "Dach",
+				image: "src/img/rw_g3.jpg",
+				items: [
+					"1 Krankentrage",
+					"1 Rettungsbrett",
+					"4 teilige Steckleiter",
+					"1 LKW Rettungsplattform",
+					"2 Auffangmulden",
+					"1 Fasspumpe",
+					"Ansaugrohr für Gefahrgut",
+					"Saugdruckschläuche säurefest",
+				],
+			},
+		],
+	},
 ];
 
 // Funktion zum Erstellen der Tabelle
 function createTable() {
-	let table = `<table class="table table-striped table-bordered">
-	<tbody>`;
+	let i = 0;
+	let table = `<div class="accordion" id="accordionTable">`;
 
 	// Durchlaufen Sie jedes Fahrzeug im Array
 	vehicle.forEach((v) => {
-		table += `<tr class="table-header">
-			<td colspan="2"><strong>${v.name}</strong></td>
-			<td>Kennzeichen: ${v.plate}</td>`;
-		table += `<tr>
+		i++;
+		table += ` <div class="accordion-item">
+        <h2 class="accordion-header" id="heading-${i}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${i}"
+                aria-expanded="true" aria-controls="collapse-${i}">
+                <strong>${v.name}</strong> <span class="plate">Kennzeichen: ${v.plate}</span></button>
+        </h2>`;
+		table += `<div id="collapse-${i}" class="accordion-collapse collapse" aria-labelledby="heading-${i}"
+            data-bs-parent="#accordionTable">
+            <div class="accordion-body">
+                <table class="table table-striped">
+	<tbody><tr>
 			<th scope="col">Geräteraum</th>
 			<th scope="col">Bild</th>
 			<th scope="col">Liste</th>
@@ -479,16 +487,17 @@ function createTable() {
 		v.equipment.forEach((e) => {
 			table += `<tr><td>${e.room}</td>`; // Geräteraum
 			table += `<td><img src="${e.image}" class="img-thumbnail rounded-top" alt="" width="200px" onclick="openLightbox('${e.image}')" /></td>`; // Bild
-			table += `<td><ul class="list-group">`; // Liste
+			table += `<td><ul class="list-group list-group-flush">`; // Liste
 			// Durchlaufen Sie die Artikel in jedem Raum
 			e.items.forEach((i) => {
 				table += `<li class="list-group-item">${i}</li>`; // Artikel
 			});
 			table += "</ul></td></tr>";
 		});
+		table += `</tbody></table></div></div></div>`;
 	});
 
-	table += "</tbody></table>";
+	table += "</div>";
 
 	return table;
 }

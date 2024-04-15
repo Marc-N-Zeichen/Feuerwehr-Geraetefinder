@@ -65,3 +65,11 @@ nav {
     color: white;
     padding: 1em;
 }
+
+.plate {
+    padding-left: 1em;
+}
+
+#accordionTable .accordion-body {
+    padding: 0 !important;
+}
