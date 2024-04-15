@@ -16,8 +16,8 @@
 }
 
 #lightbox img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 95%;
+    max-height: 95%;
     margin: auto;
     border: 5px solid white;
     /* Fügt einen weißen Rand um das Bild hinzu */
