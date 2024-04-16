@@ -73,3 +73,7 @@ nav {
 #accordionTable .accordion-body {
     padding: 0 !important;
 }
+
+#accordionTable .accordion-collapse div table {
+    margin-bottom: 0;
+}
