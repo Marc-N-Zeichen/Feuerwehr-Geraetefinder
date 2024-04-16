@@ -128,7 +128,7 @@ const vehicle = [
 				],
 			},
 			{
-				room: "Kabine",
+				room: "MR",
 				image: "",
 				items: [
 					"2 Preßluftatmer",
@@ -156,7 +156,7 @@ const vehicle = [
 				room: "G1",
 				image: "src/img/lf_g1.jpg",
 				items: [
-					"Fahrerhaus1 Trennschleifer mit Zubehoer",
+					"Fahrer1 Trennschleifer mit Zubehoer",
 					"4 Verkehrsleitkegel",
 					"2 Wathosen",
 					"1 Auffangmulde VA",
@@ -253,7 +253,7 @@ const vehicle = [
 				],
 			},
 			{
-				room: "Kabine",
+				room: "MR",
 				image: "",
 				items: [
 					"2 Handsprechfunkgeräte 2m",
@@ -269,7 +269,7 @@ const vehicle = [
 				],
 			},
 			{
-				room: "Fahrerhaus",
+				room: "Fahrer",
 				image: "",
 				items: [
 					"2 Anhaltestäbe",
@@ -322,7 +322,7 @@ const vehicle = [
 				],
 			},
 			{
-				room: "G3 vorne",
+				room: "G3 (v)",
 				image: "src/img/rw_g3.jpg",
 				items: [
 					"Kübelspritze",
@@ -333,7 +333,7 @@ const vehicle = [
 				],
 			},
 			{
-				room: "G3 hinten",
+				room: "G3 (h)",
 				image: "src/img/rw_g3.jpg",
 				items: [
 					"Schutzbrillen",
@@ -346,7 +346,7 @@ const vehicle = [
 				],
 			},
 			{
-				room: "G4 vorne",
+				room: "G4 (v)",
 				image: "src/img/rw_g4.jpg",
 				items: [
 					"1 Glasmaster",
@@ -360,7 +360,7 @@ const vehicle = [
 				],
 			},
 			{
-				room: "G4 hinten",
+				room: "G4 (h)",
 				image: "src/img/rw_g4.jpg",
 				items: [
 					"3 Pressluftflaschen",
@@ -479,7 +479,7 @@ function createTable() {
             <div class="accordion-body">
                 <table class="table table-striped">
 	<tbody><tr>
-			<th scope="col">Geräteraum</th>
+			<th scope="col">Ort</th>
 			<th scope="col">Bild</th>
 			<th scope="col">Liste</th>
 		</tr>`;
@@ -557,9 +557,11 @@ function updateSuggestions(input) {
 }
 
 // Fügen Sie einen Event-Listener zum Suchfeld hinzu, um die Vorschlagsliste zu aktualisieren, wenn die Eingabe geändert wird
-document.getElementById("search").addEventListener("input", (event) => {
-	updateSuggestions(event.target.value);
-});
+if (document.getElementById("search")) {
+	document.getElementById("search").addEventListener("input", (event) => {
+		updateSuggestions(event.target.value);
+	});
+}
 
 // Fügen Sie einen Event-Listener zum Suchfeld hinzu, um die Suchergebnisse anzuzeigen, wenn die Eingabe geändert wird
 if (document.getElementById("search")) {
@@ -579,13 +581,13 @@ function showSearchResults(input) {
 		// Erstellen Sie eine neue Tabelle für die Suchergebnisse
 		document.querySelector("#results").style.display = "block";
 		let table = `
-			<h2>Suchergebnisse</h2>
-			<table>
-				<tr>
-					<th scope="col">Gegenstand</th>
-					<th scope="col">Fahrzeug</th>
-					<th scope="col">Geräteraum</th>
-				</tr>`;
+		<h2>Suchergebnisse</h2>
+		<table>
+		<tr>
+		<th scope="col">Gegenstand</th>
+		<th scope="col">Fahrzeug</th>
+		<th scope="col">Ort</th>
+		</tr>`;
 
 		// Durchlaufen Sie jedes Fahrzeug und jeden Artikel
 		let hasResults = false; // Variable, um festzustellen, ob es Ergebnisse gibt
@@ -594,7 +596,7 @@ function showSearchResults(input) {
 				e.items.forEach((i) => {
 					// Wenn der Artikel die Eingabe enthält, fügen Sie ihn zur Tabelle hinzu
 					if (i.toLowerCase().includes(input.toLowerCase())) {
-						table += `<tr><td>${i}</td><td>${v.name} (${v.plate})</td><td>${e.room}</td></tr>`;
+						table += `<tr><td>${i}</td><td><strong>${v.name}</strong> (${v.plate})</td><td>${e.room}</td></tr>`;
 						hasResults = true; // Setzen Sie die Variable auf true, wenn es Ergebnisse gibt
 					}
 				});
@@ -616,9 +618,23 @@ function showSearchResults(input) {
 	}
 }
 // Fügen Sie einen Event-Listener zum Button hinzu
-document.getElementById("clear-input").addEventListener("click", () => {
-	// Setzen Sie die value-Eigenschaft des Eingabefelds auf einen leeren String
-	document.getElementById("search").value = "";
-	document.querySelector("#results").style.display = "none";
-	// document.getElementById("allItems").classList.remove("invisible");
-});
+if (document.getElementById("clear-input")) {
+	document.getElementById("clear-input").addEventListener("click", () => {
+		// Setzen Sie die value-Eigenschaft des Eingabefelds auf einen leeren String
+		document.getElementById("search").value = "";
+		document.querySelector("#results").style.display = "none";
+		// document.getElementById("allItems").classList.remove("invisible");
+	});
+}
+function scrollFunction() {
+	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		document.getElementById("toTop").style.display = "block";
+	} else {
+		document.getElementById("toTop").style.display = "none";
+	}
+}
+// Wenn der Benutzer auf den Button klickt, scrollen Sie zum oberen Rand des Dokuments
+function topFunction() {
+	document.body.scrollTop = 0; // Für Safari
+	document.documentElement.scrollTop = 0; // Für Chrome, Firefox, IE und Opera
+}
