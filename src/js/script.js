@@ -6,7 +6,7 @@ const vehicle = [
 		equipment: [
 			{
 				room: "G1",
-				image: "",
+				image: "src/img/tlf_g1.jpg",
 				items: [
 					"2 Wathosen",
 					"2 Unterlegkeile",
@@ -23,7 +23,7 @@ const vehicle = [
 			},
 			{
 				room: "G2",
-				image: "",
+				image: "src/img/tlf_g2.jpg",
 				items: [
 					"Druckschläuche D mit Zubehör",
 					"1 Kellersaugkorb",
@@ -36,7 +36,7 @@ const vehicle = [
 			},
 			{
 				room: "G3",
-				image: "",
+				image: "src/img/tlf_g3.jpg",
 				items: [
 					"1 Kübelspritze",
 					"2 Feuerlöscher PG12",
@@ -48,7 +48,7 @@ const vehicle = [
 			},
 			{
 				room: "G4",
-				image: "",
+				image: "src/img/tlf_g4.jpg",
 				items: [
 					"9 Verkehrsleitkegel",
 					"8 Euroblitzer",
@@ -58,7 +58,7 @@ const vehicle = [
 			},
 			{
 				room: "G5",
-				image: "",
+				image: "src/img/tlf_g5.jpg",
 				items: [
 					"Druckschläuche D mit Zubehör",
 					"1 Kellersaugkorb",
@@ -71,7 +71,7 @@ const vehicle = [
 			},
 			{
 				room: "G6",
-				image: "",
+				image: "src/img/tlf_g6.jpg",
 				items: [
 					"Druckschlauch S 25",
 					"Hohlstrahlrohre C",
@@ -96,7 +96,7 @@ const vehicle = [
 			},
 			{
 				room: "GR",
-				image: "",
+				image: "src/img/tlf_gr.jpg",
 				items: [
 					"1 x 5m Druckschlauch B",
 					"1 Sammelstück",
@@ -113,7 +113,7 @@ const vehicle = [
 			},
 			{
 				room: "Dach",
-				image: "",
+				image: "src/img/tlf_gd.jpg",
 				items: [
 					"1 Steckleiter",
 					"4 Schlauchbrücken",
@@ -129,7 +129,7 @@ const vehicle = [
 			},
 			{
 				room: "MR",
-				image: "",
+				image: "src/img/tlf_gm.jpg",
 				items: [
 					"2 Preßluftatmer",
 					"Zubehör für Atemschutz",
@@ -236,7 +236,7 @@ const vehicle = [
 			},
 			{
 				room: "Dach",
-				image: "",
+				image: "src/img/lf_gd.jpg",
 				items: [
 					"2 Schlauchbrücken",
 					"1 Steckleiter 4-teilig",
@@ -254,7 +254,7 @@ const vehicle = [
 			},
 			{
 				room: "MR",
-				image: "",
+				image: "src/img/lf_gm.jpg",
 				items: [
 					"2 Handsprechfunkgeräte 2m",
 					"1 ExWarn-Meßgerät",
@@ -270,7 +270,7 @@ const vehicle = [
 			},
 			{
 				room: "Fahrer",
-				image: "",
+				image: "src/img/lf_gf.jpg",
 				items: [
 					"2 Anhaltestäbe",
 					"1 Handscheinwerfer",
@@ -323,7 +323,7 @@ const vehicle = [
 			},
 			{
 				room: "G3 (v)",
-				image: "src/img/rw_g3.jpg",
+				image: "src/img/rw_g3_v.jpg",
 				items: [
 					"Kübelspritze",
 					"Feuerlöscher",
@@ -334,7 +334,7 @@ const vehicle = [
 			},
 			{
 				room: "G3 (h)",
-				image: "src/img/rw_g3.jpg",
+				image: "src/img/rw_g3_h.jpg",
 				items: [
 					"Schutzbrillen",
 					"Gehörstöpsel",
@@ -347,7 +347,7 @@ const vehicle = [
 			},
 			{
 				room: "G4 (v)",
-				image: "src/img/rw_g4.jpg",
+				image: "src/img/rw_g4_v.jpg",
 				items: [
 					"1 Glasmaster",
 					"3 Rettungszylinder RZ 1 – 3",
@@ -361,7 +361,7 @@ const vehicle = [
 			},
 			{
 				room: "G4 (h)",
-				image: "src/img/rw_g4.jpg",
+				image: "src/img/rw_g4_h.jpg",
 				items: [
 					"3 Pressluftflaschen",
 					"4 Stab-Pack",
@@ -405,7 +405,7 @@ const vehicle = [
 			},
 			{
 				room: "G7",
-				image: "src/img/rw_gr.jpg",
+				image: "src/img/rw_g7.jpg",
 				items: [
 					"2 C-Druckschläuche säurefest",
 					"1 Ausgußrohr",
@@ -423,8 +423,13 @@ const vehicle = [
 				],
 			},
 			{
+				room: "G8",
+				image: "src/img/rw_g8.jpg",
+				items: ["TBD"],
+			},
+			{
 				room: "GR",
-				image: "src/img/rw_g3.jpg",
+				image: "src/img/rw_gr.jpg",
 				items: [
 					"4 x Unisafe Öl u. Chemikalienbinder",
 					"1 Rettungsrucksack",
@@ -444,7 +449,7 @@ const vehicle = [
 			},
 			{
 				room: "Dach",
-				image: "src/img/rw_g3.jpg",
+				image: "src/img/rw_gd.jpg",
 				items: [
 					"1 Krankentrage",
 					"1 Rettungsbrett",
@@ -637,4 +642,81 @@ function scrollFunction() {
 function topFunction() {
 	document.body.scrollTop = 0; // Für Safari
 	document.documentElement.scrollTop = 0; // Für Chrome, Firefox, IE und Opera
+}
+
+// Quiz
+// Auswahl des Fahrzeugs
+let chosenVehicle = null;
+
+// Funktion zum Setzen des ausgewählten Fahrzeugs
+function setChosenVehicle(vehicle) {
+	chosenVehicle = vehicle;
+}
+
+// Erstellen der Fahrzeug-Buttons
+const vehicleButtonsContainer = document.getElementById(
+	"vehicleButtonsContainer"
+);
+vehicles.forEach((vehicle) => {
+	const button = document.createElement("button");
+	button.textContent = vehicle.name;
+	button.addEventListener("click", () => setChosenVehicle(vehicle));
+	vehicleButtonsContainer.appendChild(button);
+});
+
+// Erstellen des "Alle Fahrzeuge" Buttons
+const allVehiclesButton = document.createElement("button");
+allVehiclesButton.textContent = "Alle Fahrzeuge";
+allVehiclesButton.addEventListener("click", () => setChosenVehicle(null));
+vehicleButtonsContainer.appendChild(allVehiclesButton);
+
+if (chosenVehicle) {
+	chosenVehicle = vehicles.find((vehicle) => vehicle.name === chosenVehicle);
+	if (!chosenVehicle) {
+		alert("Fahrzeug nicht gefunden. Es wird mit allen Fahrzeugen gespielt.");
+		chosenVehicle = null;
+	}
+}
+
+// Auswahl des Geräts
+let chosenEquipment = (
+	chosenVehicle || vehicles[Math.floor(Math.random() * vehicles.length)]
+).equipment[Math.floor(Math.random() * chosenVehicle.equipment.length)];
+let chosenItem =
+	chosenEquipment.items[
+		Math.floor(Math.random() * chosenEquipment.items.length)
+	];
+
+// Erstellung der Frage
+document.getElementById(
+	"question"
+).textContent = `In welchem Raum und Fahrzeug finden Sie das Gerät ${chosenItem}?`;
+
+// Erstellung der Antwortmöglichkeiten
+let options = [chosenEquipment.room];
+while (options.length < 3) {
+	let randomVehicle = vehicles[Math.floor(Math.random() * vehicles.length)];
+	let randomEquipment =
+		randomVehicle.equipment[
+			Math.floor(Math.random() * randomVehicle.equipment.length)
+		];
+	if (!options.includes(randomEquipment.room)) {
+		options.push(randomEquipment.room);
+	}
+}
+
+// Mischen der Antwortmöglichkeiten
+options.sort(() => Math.random() - 0.5);
+
+// Anzeigen der Antwortmöglichkeiten
+for (let i = 0; i < 3; i++) {
+	let optionButton = document.getElementById(`option${i + 1}`);
+	optionButton.textContent = options[i];
+	optionButton.onclick = function () {
+		if (options[i] === chosenEquipment.room) {
+			document.getElementById("feedback").textContent = "Richtig!";
+		} else {
+			document.getElementById("feedback").textContent = "Falsch!";
+		}
+	};
 }
