@@ -399,5 +399,6 @@ FodyWeavers.xsd
 
 # Mac files
 .DS_Store
-.DS_Store
-.DS_Store
+
+# Backup files
+*.backup
