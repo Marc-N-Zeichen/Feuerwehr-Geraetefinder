@@ -6,17 +6,20 @@ Da die Anwendung ES6 Module verwendet, muss sie über einen Webserver getestet w
 
 ### Webserver starten
 
-**Empfohlen: VS Code Live Server**
+### Empfohlen: VS Code Live Server
+
 1. Installiere die Extension "Live Server" in VS Code
 2. Rechtsklick auf `index.html`
 3. Wähle "Open with Live Server"
 
-**Alternative: Node.js**
+### Alternative: Node.js
+
 ```bash
 npx http-server -p 8000
 ```
 
-**Alternative: PHP**
+### Alternative: PHP
+
 ```bash
 php -S localhost:8000
 ```
@@ -30,7 +33,8 @@ php -S localhost:8000
 - [ ] "Suche" ist als aktiver Link markiert
 - [ ] Suchfeld ist sichtbar und funktionsfähig
 
-#### Suchfunktion testen:
+#### Suchfunktion testen
+
 - [ ] Eingabe von weniger als 3 Zeichen zeigt keine Ergebnisse
 - [ ] Eingabe von "Axt" zeigt Vorschläge in der Datalist
 - [ ] Eingabe von "Axt" zeigt Suchergebnisse in Tabellenform
@@ -38,7 +42,8 @@ php -S localhost:8000
 - [ ] Clear-Button (X) löscht die Eingabe und Ergebnisse
 - [ ] Suche nach nicht existierendem Gerät zeigt "Keine Ergebnisse gefunden"
 
-#### Debouncing testen:
+#### Debouncing testen
+
 - [ ] Schnelles Tippen führt nicht zu sofortigen Updates (300ms Verzögerung)
 
 ### 2. Listenseite (list.html)
@@ -48,20 +53,23 @@ php -S localhost:8000
 - [ ] "Liste" ist als aktiver Link markiert
 - [ ] Überschrift "Alle Geräte" ist sichtbar
 
-#### Accordion-Tabelle testen:
+#### Accordion-Tabelle testen
+
 - [ ] Drei Fahrzeuge werden angezeigt (TLF, LF, RW)
 - [ ] Kennzeichen werden korrekt angezeigt
 - [ ] Klick auf Fahrzeug öffnet/schließt das Accordion
 - [ ] Tabelle zeigt Spalten: Ort, Bild, Liste
 - [ ] Bilder werden korrekt angezeigt (200px breit)
 
-#### Lightbox testen:
+#### Lightbox testen
+
 - [ ] Klick auf Bild öffnet Lightbox
 - [ ] Bild wird vergrößert angezeigt
 - [ ] Klick auf Lightbox schließt sie
 - [ ] ESC-Taste schließt die Lightbox
 
-#### Scroll-Button testen:
+#### Scroll-Button testen
+
 - [ ] Button ist initial nicht sichtbar
 - [ ] Nach Scrollen (>20px) wird Button sichtbar
 - [ ] Klick auf Button scrollt nach oben
@@ -97,24 +105,29 @@ php -S localhost:8000
 ## Fehlersuche
 
 ### Navigation lädt nicht
+
 - **Problem**: CORS-Fehler in der Konsole
 - **Lösung**: Webserver verwenden statt `file://`
 
 ### Module werden nicht geladen
+
 - **Problem**: "Failed to load module script"
 - **Lösung**: Überprüfe, dass alle Dateipfade korrekt sind und `type="module"` gesetzt ist
 
 ### Bilder werden nicht angezeigt
+
 - **Problem**: 404-Fehler für Bilder
 - **Lösung**: Überprüfe, dass alle Bilder im `src/img/` Ordner vorhanden sind
 
 ### Suche funktioniert nicht
+
 - **Problem**: Keine Ergebnisse trotz korrekter Eingabe
 - **Lösung**: Überprüfe Browser-Konsole auf JavaScript-Fehler
 
 ## Test-Ergebnisse dokumentieren
 
 Nach dem Testen bitte folgende Informationen notieren:
+
 - Browser und Version
 - Betriebssystem
 - Gefundene Fehler oder Probleme
