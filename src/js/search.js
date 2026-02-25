@@ -31,8 +31,9 @@ export function updateSuggestions(input, vehicles) {
 		vehicle.equipment.forEach((equipment) => {
 			equipment.items.forEach((item) => {
 				// Wenn der Artikel die Eingabe enthält, fügen Sie ihn zur Vorschlagsliste hinzu
-				if (item.toLowerCase().includes(lowerInput)) {
-					suggestions.add(item);
+				const itemName = typeof item === 'string' ? item : item.name;
+				if (itemName.toLowerCase().includes(lowerInput)) {
+					suggestions.add(itemName);
 				}
 			});
 		});
@@ -71,9 +72,13 @@ export function showSearchResults(input, vehicles) {
 			vehicle.equipment.forEach((equipment) => {
 				equipment.items.forEach((item) => {
 					// Wenn der Artikel die Eingabe enthält, fügen Sie ihn zu den Ergebnissen hinzu
-					if (item.toLowerCase().includes(lowerInput)) {
+					const itemName = typeof item === 'string' ? item : item.name;
+					const itemQuantity = typeof item === 'string' ? null : item.quantity;
+					
+					if (itemName.toLowerCase().includes(lowerInput)) {
 						results.push({
-							item: item,
+							item: itemName,
+							quantity: itemQuantity,
 							vehicleName: vehicle.name,
 							vehiclePlate: vehicle.plate,
 							room: equipment.room
@@ -108,6 +113,7 @@ function createResultsTable(results) {
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th scope="col">Anzahl</th>
 					<th scope="col">Gegenstand</th>
 					<th scope="col">Fahrzeug</th>
 					<th scope="col">Ort</th>
@@ -117,12 +123,14 @@ function createResultsTable(results) {
 
 	results.forEach((result) => {
 		const item = escapeHtml(result.item);
+		const quantity = result.quantity !== null ? escapeHtml(String(result.quantity)) : '-';
 		const vehicleName = escapeHtml(result.vehicleName);
 		const vehiclePlate = escapeHtml(result.vehiclePlate);
 		const room = escapeHtml(result.room);
 
 		html += `
 			<tr>
+				<td>${quantity}</td>
 				<td>${item}</td>
 				<td><strong>${vehicleName}</strong> (${vehiclePlate})</td>
 				<td>${room}</td>

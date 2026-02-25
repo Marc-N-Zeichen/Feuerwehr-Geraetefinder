@@ -95,7 +95,14 @@ function createEquipmentRow(equipment) {
 
 	// Durchlaufen Sie die Artikel in jedem Raum
 	equipment.items.forEach((item) => {
-		html += `<li class="list-group-item">${item}</li>`;
+		const itemName = typeof item === 'string' ? item : escapeHtml(item.name);
+		const itemQuantity = typeof item === 'string' ? null : item.quantity;
+		
+		if (itemQuantity !== null) {
+			html += `<li class="list-group-item"><strong>${itemQuantity}</strong> ${itemName}</li>`;
+		} else {
+			html += `<li class="list-group-item">${itemName}</li>`;
+		}
 	});
 
 	html += `
